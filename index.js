@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const userRoutes = require('./routes/userRoutes');
 const errorMiddleware = require('./middleware/errorMiddleware');
+const dotenv = require('dotenv');
+dotenv.config();
 
 const app = express();
 
@@ -15,8 +17,9 @@ const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 };
-const MONGODB_URI = "mongodb+srv://ankitkumarknight:gYx13QuzPx5nYpkg@cluster0.d33qt96.mongodb.net/?retryWrites=true&w=majority"
+const MONGODB_URI = `mongodb+srv://${process.env.HOST_NAME}:${process.env.PASSWORD}@cluster0.d33qt96.mongodb.net/?retryWrites=true&w=majority`;
 
+console.log(MONGODB_URI)
 mongoose.connect(MONGODB_URI, options).then(function () {
     console.log("SuccessFully Connected to Database");
 }).catch(function (err) {
