@@ -19,7 +19,6 @@ const options = {
 };
 const MONGODB_URI = `mongodb+srv://${process.env.HOST_NAME}:${process.env.PASSWORD}@cluster0.d33qt96.mongodb.net/?retryWrites=true&w=majority`;
 
-console.log(MONGODB_URI)
 mongoose.connect(MONGODB_URI, options).then(function () {
     console.log("SuccessFully Connected to Database");
 }).catch(function (err) {
