@@ -26,11 +26,9 @@ jobs:
 
     - name: Run tests
       run: npm test
-      # Replace 'npm test' with your actual test command
 
     - name: Deploy to production
       run: npm run deploy
-      # Replace 'npm run deploy' with your actual deployment command
 
     - name: Print success message
       run: echo "Deployment to production was successful!"
